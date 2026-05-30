@@ -1,0 +1,222 @@
+{
+  "main": {
+    "id": "4b9c89c76b1a48e4",
+    "type": "split",
+    "children": [
+      {
+        "id": "9189b7d36a60ebef",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "17bb60383b9f9f57",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "03_专题设定/文明圈对照表.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "文明圈对照表"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "aada852a7f8e80d2",
+    "type": "split",
+    "children": [
+      {
+        "id": "1aa04d873821879c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b50eb8c06bd808e4",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "335c69b94489bbd3",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "ab814f2905f57d7c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "71ab098296a90d05",
+    "type": "split",
+    "children": [
+      {
+        "id": "279e2ae7715935a7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b4ba1fa67ae8660a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
+            }
+          },
+          {
+            "id": "7f10d7d503aa6544",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "出链"
+            }
+          },
+          {
+            "id": "05e80ea2c5b01bed",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "579e59b188df2e41",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "2955463ea1765a75",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "17bb60383b9f9f57",
+  "lastOpenFiles": [
+    "03_专题设定/能力系统/职业与灵脉模板库.md",
+    "03_专题设定/能力系统/灵脉架构演变.md",
+    "03_专题设定/能力系统/个体能力运行与成长机制.md",
+    "03_专题设定/能力系统/灵脉谱系设定.md",
+    "03_专题设定/能力系统/能力系统索引.md",
+    "03_专题设定/能力系统/灵脉与灵械标准化体系.md",
+    "03_专题设定/深层以太设定.md",
+    "02_总纲/以太纪元世界观总纲.md",
+    "04_版本记录/CHANGELOG.md",
+    "03_专题设定/灵脉谱系设定.md",
+    "AGENTS.md",
+    "03_专题设定/灵脉与灵械标准化体系.md",
+    "03_专题设定/职业与灵脉模板库.md",
+    "03_专题设定/术语表.md",
+    "03_专题设定/文明圈对照表.md",
+    "03_专题设定/个体能力体系设定.md",
+    "03_专题设定/主角设定卡.md",
+    "03_专题设定/剧情年表.md",
+    "01_原始资料/Aether_era_world.md",
+    "01_原始资料/废弃/灵脉设计与职业体系.md",
+    "01_原始资料/废弃/Aether_era_world.md",
+    "01_原始资料/废弃",
+    "01_原始资料/灵脉设计与职业体系.md",
+    "00_项目管理/版本管理规则.md",
+    "04_版本记录/版本索引.md",
+    "README.md",
+    "灵脉设计与职业体系.md",
+    "05_导出文件/灵脉设计与职业体系.docx",
+    "05_导出文件/Aether_era_world.docx",
+    "05_导出文件",
+    "04_版本记录",
+    "03_专题设定",
+    "02_总纲",
+    "01_原始资料",
+    "00_项目管理",
+    "灵脉设计与职业体系.docx"
+  ]
+}
