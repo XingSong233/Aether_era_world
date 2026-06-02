@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>以太纪元 2.5D 星图节点沙盘</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main id="app">
+      <canvas id="starmap" aria-label="以太纪元 2.5D 星图节点沙盘"></canvas>
+
+      <section class="hud hud-left" aria-label="星图控制">
+        <header class="hud-title">
+          <p>以太纪元</p>
+          <h1>2.5D 节点沙盘</h1>
+          <span id="mapStatus">生成中</span>
+        </header>
+
+        <div class="control-block">
+          <h2>文明</h2>
+          <div id="civilizationFilters" class="check-grid"></div>
+        </div>
+
+        <div class="control-block">
+          <h2>层级</h2>
+          <div class="segmented" id="tierFilters" role="group" aria-label="显示层级">
+            <button type="button" data-tier="1">常驻</button>
+            <button type="button" data-tier="2">区域</button>
+            <button type="button" data-tier="3" class="active">剧情</button>
+            <button type="button" data-tier="4">全部</button>
+          </div>
+        </div>
+
+        <div class="control-row">
+          <button type="button" id="resetView">重置视角</button>
+          <button type="button" id="focusRisk">高危节点</button>
+        </div>
+      </section>
+
+      <section class="hud hud-right" aria-label="节点档案">
+        <header class="panel-heading">
+          <h2>节点档案</h2>
+          <span id="selectionState">未选择</span>
+        </header>
+        <div id="nodeDetail" class="detail-card"></div>
+      </section>
+
+      <section class="hud hud-bottom" aria-label="图例">
+        <div id="legend" class="legend"></div>
+      </section>
+
+      <div id="cursorReticle" class="cursor-reticle" aria-hidden="true"></div>
+      <div id="cursorReadout" class="cursor-readout" aria-hidden="true">NO TARGET</div>
+    </main>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

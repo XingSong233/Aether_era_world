@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星海疆域生成器</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="map-shell" aria-label="星海疆域生成结果">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">设定工作台 / 星海地理</p>
+            <h1>星海疆域生成器</h1>
+          </div>
+          <div class="run-readout">
+            <span id="statusText">待生成</span>
+            <strong id="stepBadge">第 0 步</strong>
+          </div>
+        </header>
+
+        <div class="canvas-wrap">
+          <canvas id="mapCanvas" width="1200" height="760"></canvas>
+          <div id="tooltip" class="tooltip" hidden></div>
+        </div>
+
+        <footer class="timeline">
+          <label class="timeline-slider">
+            <span>迭代</span>
+            <input id="stepSlider" type="range" min="0" max="0" value="0" />
+          </label>
+          <label class="step-input">
+            <span>步数</span>
+            <input id="stepInput" type="number" min="0" max="0" value="0" />
+          </label>
+          <div id="summaryStats" class="summary-stats"></div>
+        </footer>
+      </section>
+
+      <aside class="control-panel" aria-label="生成参数">
+        <section class="panel">
+          <h2>生成</h2>
+          <label>
+            <span>随机数种子</span>
+            <input id="seed" type="text" value="aether-era-450" autocomplete="off" />
+          </label>
+          <label>
+            <span>节点分布</span>
+            <select id="distributionMode">
+              <option value="density" selected>悬臂密度场</option>
+              <option value="uniform">均匀随机</option>
+            </select>
+          </label>
+          <div class="input-grid">
+            <label>
+              <span>节点数</span>
+              <input id="nodeCount" type="number" min="80" max="900" step="10" value="450" />
+            </label>
+            <label>
+              <span>迭代轮数</span>
+              <input id="iterationCount" type="number" min="10" max="800" step="10" value="180" />
+            </label>
+            <label>
+              <span>起点间距</span>
+              <input id="startMinSeparation" type="number" min="300" max="3200" step="50" value="1700" />
+            </label>
+            <label>
+              <span>开发阈值</span>
+              <input id="claimThreshold" type="number" min="5" max="120" step="1" value="34" />
+            </label>
+          </div>
+          <div class="button-row">
+            <button id="runButton" type="button" class="primary">生成并运行</button>
+            <button id="randomSeedButton" type="button">随机种子</button>
+          </div>
+          <div class="button-row">
+            <button id="resetViewButton" type="button">回到第 0 步</button>
+            <button id="exportButton" type="button">导出 JSON</button>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>航路</h2>
+          <div class="input-grid">
+            <label>
+              <span>邻接数</span>
+              <input id="neighborCount" type="number" min="2" max="10" step="1" value="4" />
+            </label>
+            <label>
+              <span>额外航路率</span>
+              <input id="extraRouteChance" type="number" min="0" max="0.8" step="0.01" value="0.16" />
+            </label>
+            <label>
+              <span>损耗尺度</span>
+              <input id="lossScale" type="number" min="120" max="1600" step="10" value="560" />
+            </label>
+            <label>
+              <span>基础输送</span>
+              <input id="baseTransfer" type="number" min="1" max="30" step="0.5" value="7.5" />
+            </label>
+            <label>
+              <span>产能爬升</span>
+              <input id="rampSteps" type="number" min="1" max="50" step="1" value="9" />
+            </label>
+            <label>
+              <span>深层惩罚</span>
+              <input id="deepPenalty" type="number" min="1" max="5" step="0.05" value="2.25" />
+            </label>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>环境</h2>
+          <div class="input-grid">
+            <label>
+              <span>深层区数</span>
+              <input id="deepZoneCount" type="number" min="0" max="16" step="1" value="5" />
+            </label>
+            <label>
+              <span>深层半径</span>
+              <input id="deepZoneRadius" type="number" min="160" max="1100" step="20" value="560" />
+            </label>
+            <label>
+              <span>洋流数</span>
+              <input id="currentCount" type="number" min="0" max="12" step="1" value="5" />
+            </label>
+            <label>
+              <span>洋流长度</span>
+              <input id="currentLength" type="number" min="4" max="40" step="1" value="16" />
+            </label>
+            <label>
+              <span>顺流折扣</span>
+              <input id="currentDiscount" type="number" min="0.25" max="1" step="0.01" value="0.56" />
+            </label>
+            <label>
+              <span>逆流折扣</span>
+              <input id="currentReverseDiscount" type="number" min="0.35" max="1.2" step="0.01" value="0.86" />
+            </label>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>星门与遗迹</h2>
+          <div class="input-grid">
+            <label>
+              <span>星门数</span>
+              <input id="stargateCount" type="number" min="0" max="80" step="1" value="28" />
+            </label>
+            <label>
+              <span>星门成本</span>
+              <input id="stargateCost" type="number" min="60" max="900" step="10" value="300" />
+            </label>
+            <label>
+              <span>星门吞吐</span>
+              <input id="stargateThroughput" type="number" min="0.02" max="1.2" step="0.02" value="0.24" />
+            </label>
+            <label>
+              <span>遗迹数</span>
+              <input id="relicCount" type="number" min="0" max="140" step="1" value="42" />
+            </label>
+            <label>
+              <span>遗迹收益上限</span>
+              <input id="relicMaxBoost" type="number" min="0" max="0.5" step="0.01" value="0.16" />
+            </label>
+            <label>
+              <span>收益递减尺度</span>
+              <input id="relicScale" type="number" min="2" max="40" step="1" value="13" />
+            </label>
+          </div>
+        </section>
+
+        <section class="panel legend-panel">
+          <h2>图例</h2>
+          <div class="legend-grid">
+            <span><i class="swatch federation"></i>星海联邦</span>
+            <span><i class="swatch ring"></i>永恒环带</span>
+            <span><i class="swatch abyss"></i>深渊裂谷</span>
+            <span><i class="swatch compact"></i>商盟</span>
+            <span><i class="line current"></i>以太洋流</span>
+            <span><i class="line deep"></i>深层航路</span>
+            <span><i class="marker gate"></i>星门</span>
+            <span><i class="marker relic"></i>遗迹</span>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+    <script src="src/simulator.js"></script>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Three.js 2.5D Starmap Sandbox"
+  short_description: "Build refined 2.5D sci-fi starmap sandboxes"
+  default_prompt: "Use $threejs-2-5d-starmap-sandbox to build or refine a 2.5D sci-fi starmap sandbox."
