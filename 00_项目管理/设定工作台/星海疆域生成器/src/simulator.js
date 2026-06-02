@@ -92,6 +92,22 @@
     "relicCount",
     "relicMaxBoost",
     "relicScale",
+    "civ_federation_output",
+    "civ_federation_deepCost",
+    "civ_federation_gateCost",
+    "civ_federation_relicWeight",
+    "civ_ring_output",
+    "civ_ring_deepCost",
+    "civ_ring_gateCost",
+    "civ_ring_relicWeight",
+    "civ_abyss_output",
+    "civ_abyss_deepCost",
+    "civ_abyss_gateCost",
+    "civ_abyss_relicWeight",
+    "civ_compact_output",
+    "civ_compact_deepCost",
+    "civ_compact_gateCost",
+    "civ_compact_relicWeight",
   ];
 
   let dom = {};
@@ -155,6 +171,9 @@
   }
 
   function readParams() {
+    const civilizations = readCivilizationParams();
+    syncCivilizations(civilizations);
+
     return {
       seed: String(dom.seed.value || "aether-era").trim(),
       distributionMode: dom.distributionMode.value,
@@ -180,6 +199,7 @@
       relicCount: readNumber("relicCount", 42, 0, 140),
       relicMaxBoost: readNumber("relicMaxBoost", 0.16, 0, 0.5),
       relicScale: readNumber("relicScale", 13, 2, 40),
+      civilizations: cloneCivilizations(CIVS),
     };
   }
 
@@ -187,6 +207,38 @@
     const value = Number(dom[id].value);
     if (!Number.isFinite(value)) return fallback;
     return clamp(value, min, max);
+  }
+
+  function readCivilizationParams() {
+    return CIVS.map((civ) => ({
+      id: civ.id,
+      name: civ.name,
+      shortName: civ.shortName,
+      color: civ.color,
+      output: readNumber(`civ_${civ.id}_output`, civ.output, 0.2, 2.5),
+      deepCost: readNumber(`civ_${civ.id}_deepCost`, civ.deepCost, 0.2, 2.5),
+      gateCost: readNumber(`civ_${civ.id}_gateCost`, civ.gateCost, 0.2, 2.5),
+      relicWeight: readNumber(`civ_${civ.id}_relicWeight`, civ.relicWeight, 0, 3),
+    }));
+  }
+
+  function syncCivilizations(civilizations) {
+    civilizations.forEach((civ, index) => {
+      Object.assign(CIVS[index], civ);
+    });
+  }
+
+  function cloneCivilizations(civilizations) {
+    return civilizations.map((civ) => ({
+      id: civ.id,
+      name: civ.name,
+      shortName: civ.shortName,
+      color: civ.color,
+      output: civ.output,
+      deepCost: civ.deepCost,
+      gateCost: civ.gateCost,
+      relicWeight: civ.relicWeight,
+    }));
   }
 
   function buildModel(params) {
@@ -212,6 +264,7 @@
       deepZones,
       currents,
       starts,
+      civilizations: cloneCivilizations(CIVS),
       history,
     };
   }
@@ -1063,7 +1116,7 @@
     return {
       generatedAt: run.generatedAt,
       params: run.params,
-      civilizations: CIVS.map(({ id, name, shortName, color }) => ({ id, name, shortName, color })),
+      civilizations: run.civilizations || cloneCivilizations(CIVS),
       starts: run.starts,
       nodes: run.nodes.map((node) => ({
         index: node.index,
