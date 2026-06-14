@@ -87,7 +87,7 @@ function createNodes(nodes, civilization, rng) {
       risk_level: chooseRiskLevel(civilization, displayTier, rng),
       status: chooseStatus(civilization, displayTier, rng),
       tags: createTags(civilization, type, displayTier),
-      source: "03_专题设定/星际航行和开拓秩序/星海地理与星图节点.md",
+      source: "10_世界观正文/10_专题设定/星际航行和开拓秩序/星海地理与星图节点.md",
     });
   }
 }
