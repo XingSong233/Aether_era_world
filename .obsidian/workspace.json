@@ -13,12 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "90_协作工作台/10_设定推导与蓝图/联邦基层典型个体九维资源分析.md",
+                "file": "90_协作工作台/20_写作指南与样稿库/舰队战战术体系写作指南.md",
                 "mode": "source",
-                "source": false
+                "source": false,
+                "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "联邦基层典型个体九维资源分析"
+              "title": "舰队战战术体系写作指南"
             }
           }
         ]
@@ -60,8 +61,8 @@
                 "extraContext": false,
                 "sortOrder": "alphabetical"
               },
-              "icon": "lucide-search",
-              "title": "搜索"
+              "icon": "lucide-ghost",
+              "title": "search"
             }
           },
           {
@@ -70,8 +71,8 @@
             "state": {
               "type": "bookmarks",
               "state": {},
-              "icon": "lucide-bookmark",
-              "title": "书签"
+              "icon": "lucide-ghost",
+              "title": "bookmarks"
             }
           }
         ]
@@ -103,8 +104,8 @@
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
               },
-              "icon": "links-coming-in",
-              "title": "长迁战争与联邦起源_第一章 的反向链接列表"
+              "icon": "lucide-ghost",
+              "title": "backlink"
             }
           },
           {
@@ -117,8 +118,8 @@
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
-              "icon": "links-going-out",
-              "title": "长迁战争与联邦起源_第一章 的出链列表"
+              "icon": "lucide-ghost",
+              "title": "outgoing-link"
             }
           },
           {
@@ -132,8 +133,8 @@
                 "showSearch": false,
                 "searchQuery": ""
               },
-              "icon": "lucide-tags",
-              "title": "标签"
+              "icon": "lucide-ghost",
+              "title": "tag"
             }
           },
           {
@@ -146,8 +147,8 @@
                 "showSearch": false,
                 "searchQuery": ""
               },
-              "icon": "lucide-archive",
-              "title": "添加笔记属性"
+              "icon": "lucide-ghost",
+              "title": "all-properties"
             }
           },
           {
@@ -161,8 +162,8 @@
                 "showSearch": false,
                 "searchQuery": ""
               },
-              "icon": "lucide-list",
-              "title": "长迁战争与联邦起源_第一章 的大纲"
+              "icon": "lucide-ghost",
+              "title": "outline"
             }
           }
         ]
@@ -175,17 +176,14 @@
   "left-ribbon": {
     "hiddenItems": {
       "switcher:打开快速切换": false,
-      "graph:查看关系图谱": false,
-      "canvas:新建白板": false,
-      "daily-notes:打开/创建今天的日记": false,
-      "templates:插入模板": false,
-      "command-palette:打开命令面板": false,
-      "bases:新建数据库": false
+      "command-palette:打开命令面板": false
     }
   },
   "active": "a5deb42a98ed03e9",
   "lastOpenFiles": [
+    "AGENTS.md",
     "90_协作工作台/20_写作指南与样稿库/草稿与候选/典型主力舰设定草案.md",
+    "90_协作工作台/10_设定推导与蓝图/联邦基层典型个体九维资源分析.md",
     "90_协作工作台/20_写作指南与样稿库/草稿与候选/联邦人族命名规则候选.md",
     "90_协作工作台/10_设定推导与蓝图/联邦基层资源九维整理.md",
     "90_协作工作台/20_写作指南与样稿库/世界内文本样稿/岚桥锚链二期并网工程报道_游戏文本三版候选.md",
@@ -195,7 +193,6 @@
     "90_协作工作台/20_写作指南与样稿库/草稿与候选/角色/主角设定卡.md",
     "90_协作工作台/20_写作指南与样稿库/专题写作辅助与检查清单.md",
     "90_协作工作台/10_设定推导与蓝图/Max-Neef模型与资源分析方法.md",
-    "90_协作工作台/10_设定推导与蓝图/联邦基层典型个体九维资源分析.md",
     "90_协作工作台/README.md",
     "90_协作工作台/90_版本记录/版本索引.md",
     "90_协作工作台/90_版本记录/版本管理规则.md",
@@ -226,7 +223,6 @@
     "07_网站发布结构/30_地图/星海地理简易星图/README.md",
     "07_网站发布结构/10_设定/设定集/共鸣网络与沉浸身份.md",
     "07_网站发布结构/10_设定/设定集/能源额度与星海贸易.md",
-    "07_网站发布结构/10_设定/设定集/古文明遗产与肃正协议.md",
     "06_图片素材/成品素材/联邦_深层以太远征海报_成品_20260531.png",
     "06_图片素材/成品素材/联邦_林月桥_航行审计官海报_成品_v3_20260531.png",
     "06_图片素材/成品素材/联邦_林月桥_航行审计官海报_成品_20260531.png",
