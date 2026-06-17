@@ -1,25 +1,24 @@
 {
   "main": {
-    "id": "dfa0dd0609e27f11",
+    "id": "f339387a6b90fc1a",
     "type": "split",
     "children": [
       {
-        "id": "02216ce9927d96e6",
+        "id": "24eca93bbef5f925",
         "type": "tabs",
         "children": [
           {
-            "id": "a5deb42a98ed03e9",
+            "id": "ac314e01c929442b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "90_协作工作台/20_写作指南与样稿库/舰队战战术体系写作指南.md",
+                "file": "20_展示发布层/40_作品/霜背支链长篇/02_正文/第05章_八分二十秒.md",
                 "mode": "source",
-                "source": false,
-                "backlinks": false
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "舰队战战术体系写作指南"
+              "title": "第05章_八分二十秒"
             }
           }
         ]
@@ -28,15 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "64ae74edba26a5de",
+    "id": "a3b15682f68677cb",
     "type": "split",
     "children": [
       {
-        "id": "d62c591eb1424990",
+        "id": "d18139d71dbb4feb",
         "type": "tabs",
         "children": [
           {
-            "id": "1cac9969392cfc5b",
+            "id": "00d8b32ea38da90e",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -49,7 +48,7 @@
             }
           },
           {
-            "id": "46eff880436506ce",
+            "id": "42b057302531abba",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -61,18 +60,18 @@
                 "extraContext": false,
                 "sortOrder": "alphabetical"
               },
-              "icon": "lucide-ghost",
-              "title": "search"
+              "icon": "lucide-search",
+              "title": "搜索"
             }
           },
           {
-            "id": "fd84f2b8904db83d",
+            "id": "2285165c2ab6cfbd",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "bookmarks"
+              "icon": "lucide-bookmark",
+              "title": "书签"
             }
           }
         ]
@@ -82,20 +81,20 @@
     "width": 300
   },
   "right": {
-    "id": "9da21719233e52a5",
+    "id": "4907866b51bff769",
     "type": "split",
     "children": [
       {
-        "id": "3dfca9b5eba90d2e",
+        "id": "558dfe7d666b61ab",
         "type": "tabs",
         "children": [
           {
-            "id": "63a1088f2f461111",
+            "id": "32fa075c38e7d58c",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "07_网站发布结构/40_作品/长迁战争与联邦起源_第一章.md",
+                "file": "20_展示发布层/40_作品/霜背支链长篇/02_正文/第05章_八分二十秒.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,26 +103,26 @@
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
               },
-              "icon": "lucide-ghost",
-              "title": "backlink"
+              "icon": "links-coming-in",
+              "title": "第05章_八分二十秒 的反向链接列表"
             }
           },
           {
-            "id": "7567ab9ad730cb48",
+            "id": "6a42f88baf10b8af",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "07_网站发布结构/40_作品/长迁战争与联邦起源_第一章.md",
+                "file": "20_展示发布层/40_作品/霜背支链长篇/02_正文/第05章_八分二十秒.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
-              "icon": "lucide-ghost",
-              "title": "outgoing-link"
+              "icon": "links-going-out",
+              "title": "第05章_八分二十秒 的出链列表"
             }
           },
           {
-            "id": "ceabb17cffac2a26",
+            "id": "fe75a1cb13389c8b",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -133,12 +132,12 @@
                 "showSearch": false,
                 "searchQuery": ""
               },
-              "icon": "lucide-ghost",
-              "title": "tag"
+              "icon": "lucide-tags",
+              "title": "标签"
             }
           },
           {
-            "id": "71e1251b42e908ce",
+            "id": "923bd0b3789ef731",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -147,23 +146,23 @@
                 "showSearch": false,
                 "searchQuery": ""
               },
-              "icon": "lucide-ghost",
-              "title": "all-properties"
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
             }
           },
           {
-            "id": "1a80c9facb4a90c1",
+            "id": "2dda9bd251a61133",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "07_网站发布结构/40_作品/长迁战争与联邦起源_第一章.md",
+                "file": "20_展示发布层/40_作品/霜背支链长篇/02_正文/第05章_八分二十秒.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
-              "icon": "lucide-ghost",
-              "title": "outline"
+              "icon": "lucide-list",
+              "title": "第05章_八分二十秒 的大纲"
             }
           }
         ]
@@ -176,56 +175,19 @@
   "left-ribbon": {
     "hiddenItems": {
       "switcher:打开快速切换": false,
-      "command-palette:打开命令面板": false
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
     }
   },
-  "active": "a5deb42a98ed03e9",
+  "active": "ac314e01c929442b",
   "lastOpenFiles": [
-    "AGENTS.md",
-    "90_协作工作台/20_写作指南与样稿库/草稿与候选/典型主力舰设定草案.md",
-    "90_协作工作台/10_设定推导与蓝图/联邦基层典型个体九维资源分析.md",
-    "90_协作工作台/20_写作指南与样稿库/草稿与候选/联邦人族命名规则候选.md",
-    "90_协作工作台/10_设定推导与蓝图/联邦基层资源九维整理.md",
-    "90_协作工作台/20_写作指南与样稿库/世界内文本样稿/岚桥锚链二期并网工程报道_游戏文本三版候选.md",
-    "90_协作工作台/20_写作指南与样稿库/世界内文本样稿/世界内文本风格候选_第二批.md",
-    "90_协作工作台/20_写作指南与样稿库/世界内文本样稿/技能内世界内文本风格全量样稿_第七批.md",
-    "90_协作工作台/20_写作指南与样稿库/草稿与候选/剧情/剧情年表.md",
-    "90_协作工作台/20_写作指南与样稿库/草稿与候选/角色/主角设定卡.md",
-    "90_协作工作台/20_写作指南与样稿库/专题写作辅助与检查清单.md",
-    "90_协作工作台/10_设定推导与蓝图/Max-Neef模型与资源分析方法.md",
-    "90_协作工作台/README.md",
-    "90_协作工作台/90_版本记录/版本索引.md",
-    "90_协作工作台/90_版本记录/版本管理规则.md",
-    "90_协作工作台/90_版本记录/CHANGELOG.md",
-    "90_协作工作台/90_版本记录",
-    "90_协作工作台/80_原始与废弃追溯/已撤回稿/时间线/已撤回_联邦早期历史阶段.md",
-    "90_协作工作台/80_原始与废弃追溯/原始资料/废弃/灵脉设计与职业体系.md",
-    "90_协作工作台/80_原始与废弃追溯/已撤回稿/作品/已撤回_联邦早期历史草稿.md",
-    "90_协作工作台/80_原始与废弃追溯/原始资料/废弃/Aether_era_world.md",
-    "90_协作工作台/80_原始与废弃追溯/已撤回稿/时间线",
-    "90_协作工作台/80_原始与废弃追溯/已撤回稿/作品",
-    "90_协作工作台/80_原始与废弃追溯/原始资料/废弃",
-    "90_协作工作台/80_原始与废弃追溯/原始资料/关键科技与生产关系状态表&四文明关键科技态度矩阵残缺回答 生命工程与生育伦理专题.md",
-    "90_协作工作台/80_原始与废弃追溯/原始资料/关键科技与生产关系状态表&四文明关键科技态度矩阵残缺回答 AI 与数字人格专题.md",
-    "90_协作工作台/80_原始与废弃追溯/已撤回稿",
-    "90_协作工作台/80_原始与废弃追溯/原始资料",
-    "90_协作工作台/80_原始与废弃追溯",
-    "90_协作工作台/30_素材与导出/导出文件/以太纪元世界观海报_竖版机设风_v1_900x1200.png",
-    "90_协作工作台/30_素材与导出/导出文件/灵脉设计与职业体系.docx",
-    "90_协作工作台/30_素材与导出/导出文件/以太纪元世界观海报_技术设定板_v1_1200x900.png",
-    "90_协作工作台/30_素材与导出/导出文件/以太纪元世界观海报_深层以太远征_v1.png",
-    "90_协作工作台/30_素材与导出/导出文件/Aether_era_world.docx",
-    "90_协作工作台/30_素材与导出/导出文件",
-    "90_协作工作台/30_素材与导出/图片素材/素材登记表.md",
-    "90_协作工作台/30_素材与导出/图片素材/生成素材/以太纪元_暗区遗产封面候选_E1_20260611.png",
-    "90_协作工作台/30_素材与导出/图片素材/生成素材/以太纪元_暗区遗产半厚涂封面候选_E2_20260614.png",
-    "90_协作工作台/30_素材与导出/图片素材/生成素材/以太纪元_星海群岛总封面候选_A2_20260611.png",
-    "07_网站发布结构/30_地图/星海地理简易星图/README.md",
-    "07_网站发布结构/10_设定/设定集/共鸣网络与沉浸身份.md",
-    "07_网站发布结构/10_设定/设定集/能源额度与星海贸易.md",
-    "06_图片素材/成品素材/联邦_深层以太远征海报_成品_20260531.png",
-    "06_图片素材/成品素材/联邦_林月桥_航行审计官海报_成品_v3_20260531.png",
-    "06_图片素材/成品素材/联邦_林月桥_航行审计官海报_成品_20260531.png",
-    "06_图片素材/成品素材/深渊裂谷_赛伊瓦恩_共鸣生物学者海报_成品_v3_20260531.png"
+    "20_展示发布层/40_作品/霜背支链长篇/02_正文/第04章_霜背支链第一轮交火.md",
+    "20_展示发布层/40_作品/霜背支链长篇/02_正文/第03章_旧船坞残骸带.md",
+    "20_展示发布层/40_作品/霜背支链长篇/02_正文/第02章_黄灯改签.md",
+    "20_展示发布层/40_作品/霜背支链长篇/02_正文/第01章_霜背穹顶的撤离名单.md"
   ]
 }
