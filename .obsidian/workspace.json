@@ -1,25 +1,20 @@
 {
   "main": {
-    "id": "dfa0dd0609e27f11",
+    "id": "58231afc0886e6d1",
     "type": "split",
     "children": [
       {
-        "id": "02216ce9927d96e6",
+        "id": "b3338920c84ecb6d",
         "type": "tabs",
         "children": [
           {
-            "id": "a5deb42a98ed03e9",
+            "id": "cad138a756da9f77",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "10_世界观正文/10_专题设定/FMA-31界标级承身装甲.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "FMA-31界标级承身装甲"
+              "title": "新标签页"
             }
           }
         ]
@@ -28,15 +23,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "64ae74edba26a5de",
+    "id": "13ff9dc0ffe9c1cb",
     "type": "split",
     "children": [
       {
-        "id": "d62c591eb1424990",
+        "id": "c27e18127a85d292",
         "type": "tabs",
         "children": [
           {
-            "id": "1cac9969392cfc5b",
+            "id": "489209ff5a4fc7c6",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -49,7 +44,7 @@
             }
           },
           {
-            "id": "46eff880436506ce",
+            "id": "4082bcb239072d00",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -61,18 +56,18 @@
                 "extraContext": false,
                 "sortOrder": "alphabetical"
               },
-              "icon": "lucide-ghost",
-              "title": "search"
+              "icon": "lucide-search",
+              "title": "搜索"
             }
           },
           {
-            "id": "fd84f2b8904db83d",
+            "id": "095eeb3c9aa95e13",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "bookmarks"
+              "icon": "lucide-bookmark",
+              "title": "书签"
             }
           }
         ]
@@ -82,20 +77,19 @@
     "width": 300
   },
   "right": {
-    "id": "9da21719233e52a5",
+    "id": "d50e5d045711b9f8",
     "type": "split",
     "children": [
       {
-        "id": "3dfca9b5eba90d2e",
+        "id": "e4df39a9b055590f",
         "type": "tabs",
         "children": [
           {
-            "id": "63a1088f2f461111",
+            "id": "e264b19eaaf44f61",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "07_网站发布结构/40_作品/长迁战争与联邦起源_第一章.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,26 +98,25 @@
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
               },
-              "icon": "lucide-ghost",
-              "title": "backlink"
+              "icon": "links-coming-in",
+              "title": "反向链接"
             }
           },
           {
-            "id": "7567ab9ad730cb48",
+            "id": "7585abf17e5075dc",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "07_网站发布结构/40_作品/长迁战争与联邦起源_第一章.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
-              "icon": "lucide-ghost",
-              "title": "outgoing-link"
+              "icon": "links-going-out",
+              "title": "出链"
             }
           },
           {
-            "id": "ceabb17cffac2a26",
+            "id": "283125283876899d",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -133,12 +126,12 @@
                 "showSearch": false,
                 "searchQuery": ""
               },
-              "icon": "lucide-ghost",
-              "title": "tag"
+              "icon": "lucide-tags",
+              "title": "标签"
             }
           },
           {
-            "id": "71e1251b42e908ce",
+            "id": "4923ee90179179ef",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -147,23 +140,22 @@
                 "showSearch": false,
                 "searchQuery": ""
               },
-              "icon": "lucide-ghost",
-              "title": "all-properties"
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
             }
           },
           {
-            "id": "1a80c9facb4a90c1",
+            "id": "457e7f08e2f200e1",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "07_网站发布结构/40_作品/长迁战争与联邦起源_第一章.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
-              "icon": "lucide-ghost",
-              "title": "outline"
+              "icon": "lucide-list",
+              "title": "大纲"
             }
           }
         ]
@@ -176,56 +168,23 @@
   "left-ribbon": {
     "hiddenItems": {
       "switcher:打开快速切换": false,
-      "command-palette:打开命令面板": false
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
     }
   },
-  "active": "a5deb42a98ed03e9",
+  "active": "489209ff5a4fc7c6",
   "lastOpenFiles": [
-    "20_展示发布层/40_作品/霜背支链长篇/02_正文/第05章_八分二十秒.md",
-    "10_世界观正文/10_专题设定/FMA-31界标级承身装甲.md",
-    "20_展示发布层/40_作品/霜背支链长篇/02_正文/第01章_霜背穹顶的撤离名单.md",
-    "20_展示发布层/40_作品/霜背支链长篇/04_修订记录/小说Review_非小说语言与逻辑问题.md",
-    "20_展示发布层/40_作品/霜背支链长篇/01_大纲/章节大纲.md",
-    "20_展示发布层/40_作品/霜背支链长篇/02_正文/第18章_霜背支链的最后一跳.md",
-    "20_展示发布层/40_作品/霜背支链长篇/02_正文/第17章_第三封锁泡.md",
-    "20_展示发布层/40_作品/霜背支链长篇/02_正文/第06章_冷通道黑匣.md",
-    "20_展示发布层/40_作品/霜背支链长篇/02_正文/第16章_霜背听证前夜.md",
-    "20_展示发布层/40_作品/霜背支链长篇/02_正文/第15章_低带宽文本摘要.md",
-    "20_展示发布层/40_作品/霜背支链长篇/02_正文/第14章_延长观察名单.md",
-    "20_展示发布层/40_作品/霜背支链长篇/02_正文/第13章_返航证明失效.md",
-    "20_展示发布层/40_作品/霜背支链长篇/02_正文/第12章_幼巢舱不得接触.md",
-    "20_展示发布层/40_作品/霜背支链长篇/01_大纲/第11-18章续写作战板.md",
-    "20_展示发布层/40_作品/霜背支链长篇/03_章节摘要/第18章_摘要.md",
-    "20_展示发布层/40_作品/霜背支链长篇/03_章节摘要/第17章_摘要.md",
-    "20_展示发布层/40_作品/霜背支链长篇/03_章节摘要/第16章_摘要.md",
-    "20_展示发布层/40_作品/霜背支链长篇/03_章节摘要/第15章_摘要.md",
-    "20_展示发布层/40_作品/霜背支链长篇/03_章节摘要/第14章_摘要.md",
-    "20_展示发布层/40_作品/霜背支链长篇/03_章节摘要/第13章_摘要.md",
-    "20_展示发布层/40_作品/霜背支链长篇/03_章节摘要/第12章_摘要.md",
-    "20_展示发布层/40_作品/霜背支链长篇/01_大纲/全书结构.md",
-    "20_展示发布层/40_作品/霜背支链长篇/03_章节摘要/第01章_摘要.md",
-    "20_展示发布层/40_作品/霜背支链长篇/02_正文/第11章_第二封锁泡.md",
-    "20_展示发布层/40_作品/霜背支链长篇/03_章节摘要/第11章_摘要.md",
-    "20_展示发布层/40_作品/霜背支链长篇/03_章节摘要/第09章_摘要.md",
-    "20_展示发布层/40_作品/霜背支链长篇/03_章节摘要",
-    "20_展示发布层/40_作品/霜背支链长篇/04_修订记录",
-    "20_展示发布层/40_作品/霜背支链长篇/02_正文",
-    "20_展示发布层/40_作品/霜背支链长篇/01_大纲",
-    "20_展示发布层/40_作品/霜背支链长篇/00_总控",
-    "20_展示发布层/40_作品/霜背支链长篇",
-    "90_协作工作台/90_版本记录",
-    "90_协作工作台/80_原始与废弃追溯/已撤回稿/时间线",
-    "90_协作工作台/80_原始与废弃追溯/已撤回稿/作品",
-    "90_协作工作台/80_原始与废弃追溯/原始资料/废弃",
-    "90_协作工作台/30_素材与导出/导出文件/以太纪元世界观海报_竖版机设风_v1_900x1200.png",
-    "90_协作工作台/30_素材与导出/导出文件/以太纪元世界观海报_技术设定板_v1_1200x900.png",
-    "90_协作工作台/30_素材与导出/导出文件/以太纪元世界观海报_深层以太远征_v1.png",
-    "90_协作工作台/30_素材与导出/图片素材/生成素材/以太纪元_暗区遗产封面候选_E1_20260611.png",
-    "90_协作工作台/30_素材与导出/图片素材/生成素材/以太纪元_暗区遗产半厚涂封面候选_E2_20260614.png",
-    "90_协作工作台/30_素材与导出/图片素材/生成素材/以太纪元_星海群岛总封面候选_A2_20260611.png",
-    "06_图片素材/成品素材/联邦_深层以太远征海报_成品_20260531.png",
-    "06_图片素材/成品素材/联邦_林月桥_航行审计官海报_成品_v3_20260531.png",
-    "06_图片素材/成品素材/联邦_林月桥_航行审计官海报_成品_20260531.png",
-    "06_图片素材/成品素材/深渊裂谷_赛伊瓦恩_共鸣生物学者海报_成品_v3_20260531.png"
+    "20_展示发布层/10_设定/组织/灵枢日用灵算官网.html",
+    "20_展示发布层/10_设定/组织/灵枢日用灵算.md",
+    "20_展示发布层/10_设定/组织/assets/灵枢日用灵算/lingshu-anime-hero.png",
+    "lingshu-anime-hero.png",
+    "20_展示发布层/10_设定/组织/assets/灵枢日用灵算",
+    "20_展示发布层/10_设定/组织/assets/栖线服饰/qixian-formal-reception.png",
+    "20_展示发布层/10_设定/组织/assets/栖线服饰/qixian-travel-terminal.png",
+    "20_展示发布层/10_设定/组织/assets/栖线服饰/qixian-lookbook-station.png"
   ]
 }

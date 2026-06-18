@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>灵枢日用灵算 | 民用灵算设备</title>
+  <meta name="description" content="灵枢日用灵算是一家星海联邦 C 端民用灵算设备公司，提供个人灵算核心、家庭共鸣路由、学习终端、通勤辅助端和授权维护服务。">
+  <style>
+    :root {
+      --ink: #17201f;
+      --muted: #62706d;
+      --paper: #f6f0e6;
+      --panel: #fffaf1;
+      --line: rgba(23, 32, 31, 0.14);
+      --teal: #20b8a5;
+      --amber: #eda84e;
+      --coral: #e36f54;
+      --blue: #5477bd;
+      --dark: #121b1b;
+      --radius: 8px;
+      --shadow: 0 24px 70px rgba(18, 27, 27, 0.18);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+      line-height: 1.64;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .topbar {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 30;
+      min-height: 64px;
+      padding: 0 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+      background: linear-gradient(180deg, rgba(18, 27, 27, 0.84), rgba(18, 27, 27, 0));
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,.75);
+      position: relative;
+    }
+    .mark::before,
+    .mark::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      background: var(--teal);
+    }
+    .mark::before { width: 16px; height: 4px; left: 5px; top: 8px; }
+    .mark::after { width: 8px; height: 8px; right: 5px; bottom: 6px; background: var(--amber); }
+    nav {
+      display: flex;
+      gap: 22px;
+      font-size: 14px;
+      color: rgba(255,255,255,.82);
+    }
+
+    .hero {
+      min-height: 92vh;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(18,27,27,.98), rgba(18,27,27,.78) 37%, rgba(18,27,27,.18) 67%),
+        url("assets/灵枢日用灵算/lingshu-anime-hero.png");
+      background-size: cover;
+      background-position: center;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(180deg, rgba(255,255,255,.055) 0 1px, transparent 1px 8px),
+        radial-gradient(circle at 74% 28%, rgba(32,184,165,.24), transparent 30%),
+        radial-gradient(circle at 86% 74%, rgba(237,168,78,.20), transparent 24%);
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(1160px, calc(100% - 44px));
+      margin: 0 auto;
+      padding: 118px 0 70px;
+      display: grid;
+      grid-template-columns: minmax(0, 660px) minmax(260px, 360px);
+      gap: 48px;
+      align-items: end;
+    }
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      font-size: 13px;
+      color: rgba(255,255,255,.78);
+      text-transform: uppercase;
+    }
+    .kicker::before {
+      content: "";
+      width: 38px;
+      height: 2px;
+      background: var(--amber);
+    }
+    h1 {
+      max-width: 8ch;
+      margin: 0;
+      font-size: clamp(54px, 8vw, 112px);
+      line-height: .96;
+      letter-spacing: 0;
+    }
+    .hero-copy {
+      max-width: 610px;
+      margin: 26px 0 0;
+      color: rgba(255,255,255,.86);
+      font-size: clamp(18px, 2vw, 22px);
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .button {
+      min-height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 18px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.34);
+      background: rgba(255,255,255,.11);
+      backdrop-filter: blur(12px);
+      font-weight: 800;
+    }
+    .button.primary {
+      border-color: transparent;
+      background: #fff;
+      color: var(--ink);
+    }
+    .status-panel {
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(18,27,27,.44);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+      padding: 20px;
+    }
+    .status-panel strong {
+      display: block;
+      margin-bottom: 14px;
+      color: #fff;
+    }
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .status {
+      min-height: 86px;
+      padding: 13px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.10);
+      position: relative;
+      overflow: hidden;
+    }
+    .status::after {
+      content: "";
+      position: absolute;
+      left: 13px;
+      right: 13px;
+      bottom: 11px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--teal), transparent);
+      animation: meter 4s ease-in-out infinite;
+      transform-origin: left;
+    }
+    .status b { display: block; font-size: 22px; color: #fff; line-height: 1; }
+    .status span { display: block; margin-top: 9px; color: rgba(255,255,255,.72); font-size: 12px; }
+
+    .ticker {
+      overflow: hidden;
+      border-block: 1px solid rgba(255,255,255,.08);
+      background: var(--dark);
+      color: rgba(255,255,255,.75);
+    }
+    .ticker-track {
+      width: max-content;
+      display: flex;
+      gap: 32px;
+      padding: 12px 0;
+      white-space: nowrap;
+      animation: ticker 36s linear infinite;
+    }
+    .ticker span {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+    }
+    .ticker span::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--teal);
+    }
+
+    .section { padding: 86px 0; }
+    .section.alt { background: #ebe7dc; }
+    .wrap {
+      width: min(1160px, calc(100% - 44px));
+      margin: 0 auto;
+    }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(280px, .68fr);
+      gap: 46px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+    h2 {
+      margin: 0;
+      font-size: clamp(32px, 4.6vw, 62px);
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+    .split {
+      display: grid;
+      grid-template-columns: minmax(260px, .86fr) minmax(0, 1.12fr);
+      gap: 26px;
+      align-items: stretch;
+    }
+    .feature-image {
+      min-height: 500px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+      background: var(--dark);
+    }
+    .feature-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 66% center;
+    }
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .principle,
+    .product-copy,
+    .step,
+    .limit-item {
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--panel);
+    }
+    .principle {
+      min-height: 170px;
+      padding: 20px;
+    }
+    .badge {
+      width: 38px;
+      height: 28px;
+      margin-bottom: 24px;
+      border-radius: 999px;
+      background: var(--teal);
+      box-shadow: 18px 0 0 var(--amber);
+    }
+    .principle:nth-child(2) .badge { background: var(--blue); box-shadow: 18px 0 0 var(--coral); }
+    .principle:nth-child(3) .badge { background: var(--amber); box-shadow: 18px 0 0 var(--teal); }
+    .principle:nth-child(4) .badge { background: var(--coral); box-shadow: 18px 0 0 var(--blue); }
+    h3 {
+      margin: 0 0 8px;
+      font-size: 22px;
+      line-height: 1.24;
+    }
+    p { margin: 0; }
+    .muted { color: var(--muted); }
+
+    .product-board {
+      display: grid;
+      grid-template-columns: 240px minmax(0, 1fr);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    .tabs {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 10px;
+      background: var(--dark);
+    }
+    .tabs button {
+      min-height: 48px;
+      border: 0;
+      border-radius: var(--radius);
+      background: transparent;
+      color: rgba(255,255,255,.68);
+      font: inherit;
+      text-align: left;
+      padding: 0 14px;
+      cursor: pointer;
+    }
+    .tabs button[aria-selected="true"] {
+      background: var(--paper);
+      color: var(--ink);
+      font-weight: 800;
+    }
+    .product-area {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, .72fr);
+      min-height: 420px;
+    }
+    .product-copy {
+      border: 0;
+      border-radius: 0;
+      padding: 34px;
+      background: transparent;
+    }
+    .product-copy h3 { font-size: 34px; }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .device-visual {
+      position: relative;
+      min-height: 100%;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 70% 34%, rgba(32,184,165,.34), transparent 26%),
+        radial-gradient(circle at 36% 68%, rgba(237,168,78,.28), transparent 32%),
+        #263231;
+    }
+    .device-visual::before,
+    .device-visual::after {
+      content: "";
+      position: absolute;
+      border-radius: 28px;
+      border: 3px solid rgba(255,255,255,.62);
+      background: rgba(255,255,255,.14);
+      box-shadow: 0 24px 60px rgba(0,0,0,.18);
+    }
+    .device-visual::before {
+      width: 210px;
+      height: 136px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .device-visual::after {
+      width: 96px;
+      height: 96px;
+      left: calc(50% + 80px);
+      top: calc(50% - 84px);
+      border-radius: 50%;
+    }
+    .device-lines {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, transparent 22%, rgba(32,184,165,.55) 22% 44%, transparent 44%),
+        repeating-linear-gradient(165deg, transparent 0 38px, rgba(255,255,255,.16) 38px 41px);
+      opacity: .45;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .step {
+      min-height: 230px;
+      padding: 22px;
+    }
+    .num {
+      display: block;
+      margin-bottom: 48px;
+      color: var(--coral);
+      font-size: 13px;
+      font-weight: 800;
+    }
+    .service-band {
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(18,27,27,.94), rgba(18,27,27,.58)),
+        url("assets/灵枢日用灵算/lingshu-anime-hero.png");
+      background-size: cover;
+      background-position: center;
+    }
+    .service-band .lead { color: rgba(255,255,255,.78); }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 34px;
+    }
+    .service {
+      min-height: 230px;
+      padding: 22px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.24);
+      background: rgba(255,255,255,.10);
+      backdrop-filter: blur(14px);
+    }
+    .service p { color: rgba(255,255,255,.78); }
+
+    .limits {
+      display: grid;
+      grid-template-columns: minmax(0, .78fr) minmax(0, 1fr);
+      gap: 36px;
+      align-items: start;
+    }
+    .limit-list {
+      display: grid;
+      gap: 10px;
+    }
+    .limit-item {
+      display: grid;
+      grid-template-columns: 34px minmax(0, 1fr);
+      gap: 12px;
+      padding: 16px;
+      align-items: start;
+    }
+    .limit-item span {
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--coral);
+      font-weight: 800;
+      line-height: 1;
+    }
+    .footer {
+      padding: 44px 0;
+      background: var(--dark);
+      color: rgba(255,255,255,.72);
+      font-size: 13px;
+    }
+    .footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 26px;
+      align-items: flex-start;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    @keyframes meter {
+      0%, 100% { transform: scaleX(.24); opacity: .48; }
+      50% { transform: scaleX(1); opacity: 1; }
+    }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    @media (max-width: 920px) {
+      .topbar { padding: 0 18px; }
+      nav { display: none; }
+      .hero-inner,
+      .section-head,
+      .split,
+      .limits { grid-template-columns: 1fr; }
+      .hero-inner { padding-top: 96px; }
+      .status-panel { max-width: 520px; }
+      .principles,
+      .steps,
+      .service-grid,
+      .product-board,
+      .product-area { grid-template-columns: 1fr; }
+      .tabs {
+        flex-direction: row;
+        overflow-x: auto;
+      }
+      .tabs button {
+        min-width: 128px;
+        text-align: center;
+      }
+      .device-visual { min-height: 280px; }
+      .feature-image { min-height: 360px; }
+      .footer .wrap { display: block; }
+    }
+    @media (max-width: 560px) {
+      .hero { min-height: 88vh; background-position: 58% center; }
+      .hero-inner,
+      .wrap { width: min(100% - 28px, 1160px); }
+      h1 { font-size: 48px; line-height: 1.04; }
+      h2 { font-size: 30px; line-height: 1.14; }
+      .section { padding: 64px 0; }
+      .status-grid { grid-template-columns: 1fr; }
+      .product-copy { padding: 24px; }
+      .product-copy h3 { font-size: 28px; }
+      .hero-actions .button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="灵枢日用灵算首页">
+      <span class="mark" aria-hidden="true"></span>
+      <span>灵枢日用灵算</span>
+    </a>
+    <nav aria-label="页面导航">
+      <a href="#promise">本地优先</a>
+      <a href="#products">产品</a>
+      <a href="#start">购买授权</a>
+      <a href="#service">维护</a>
+      <a href="#limits">边界</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="灵枢日用灵算官方首页">
+      <div class="hero-inner">
+        <div>
+          <span class="kicker">Civilian spirit computing</span>
+          <h1>灵枢日用灵算</h1>
+          <p class="hero-copy">为家庭、学生、通勤者和轻办公团队准备的民用灵算设备。买得到、看得懂、能授权，也能在需要时停下。</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#start">预约门店开机</a>
+            <a class="button" href="#products">查看产品线</a>
+          </div>
+        </div>
+        <aside class="status-panel" aria-label="今日服务窗口">
+          <strong>今日服务窗口</strong>
+          <div class="status-grid">
+            <div class="status"><b data-count="04">00</b><span>学生模式授权项</span></div>
+            <div class="status"><b data-count="12">00</b><span>家庭路由复测分钟</span></div>
+            <div class="status"><b data-count="18">00</b><span>通勤端断连测试</span></div>
+            <div class="status"><b data-count="24">00</b><span>夜间维护窗口</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="ticker" aria-label="服务提示">
+      <div class="ticker-track">
+        <span>基础购买不需要完整身体履历</span>
+        <span>凭证调用按用途分开确认</span>
+        <span>儿童模式默认关闭商业体验流</span>
+        <span>维护记录默认本地保存</span>
+        <span>设备可一键断开公共网络</span>
+        <span>基础购买不需要完整身体履历</span>
+        <span>凭证调用按用途分开确认</span>
+        <span>儿童模式默认关闭商业体验流</span>
+        <span>维护记录默认本地保存</span>
+        <span>设备可一键断开公共网络</span>
+      </div>
+    </section>
+
+    <section class="section reveal" id="promise">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>日常设备应该先学会少拿数据。</h2>
+          <p class="lead">灵枢设备处理课程、航班、家庭设备、基础共鸣消息和公共服务表单。它们不读取完整灵核参数，不把私人感官记录交给商业推荐，也不把预测提醒变成无人裁判。</p>
+        </div>
+        <div class="split">
+          <div class="feature-image">
+            <img src="assets/灵枢日用灵算/lingshu-anime-hero.png" alt="二次元风格的灵枢民用灵算设备官网主视觉">
+          </div>
+          <div class="principles">
+            <article class="principle reveal">
+              <div class="badge" aria-hidden="true"></div>
+              <h3>本地优先</h3>
+              <p class="muted">日程、笔记、家庭设备名和普通维护记录默认保存在本地设备里。</p>
+            </article>
+            <article class="principle reveal">
+              <div class="badge" aria-hidden="true"></div>
+              <h3>最小披露</h3>
+              <p class="muted">购买、上课、通勤、医疗预约分别调用不同凭证，不要求完整履历。</p>
+            </article>
+            <article class="principle reveal">
+              <div class="badge" aria-hidden="true"></div>
+              <h3>低功率运行</h3>
+              <p class="muted">家庭、学习和通勤功能停留在民用低功率规格，异常先降级再提示。</p>
+            </article>
+            <article class="principle reveal">
+              <div class="badge" aria-hidden="true"></div>
+              <h3>可停可修</h3>
+              <p class="muted">每台设备都有断连测试、维护窗口、凭证槽清洁和争议记录入口。</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt reveal" id="products">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>产品线</h2>
+          <p class="lead">不是军用推演器，也不是高危职业套件。灵枢只处理普通人每天会遇到的学习、家庭、通勤、轻办公和公共服务连接。</p>
+        </div>
+        <div class="product-board">
+          <div class="tabs" role="tablist" aria-label="产品系列">
+            <button type="button" role="tab" aria-selected="true" data-product="core">栖核</button>
+            <button type="button" role="tab" aria-selected="false" data-product="home">环路</button>
+            <button type="button" role="tab" aria-selected="false" data-product="study">折页</button>
+            <button type="button" role="tab" aria-selected="false" data-product="commute">随行</button>
+            <button type="button" role="tab" aria-selected="false" data-product="service">凭证槽</button>
+          </div>
+          <div class="product-area">
+            <article class="product-copy" id="productCopy">
+              <h3>栖核个人灵算核心</h3>
+              <p class="muted">掌心大小的低功率随身算力。适合日程整理、学习笔记、本地凭证夹、普通共鸣消息和家庭设备联动。</p>
+              <div class="chips">
+                <span class="chip">本地凭证夹</span>
+                <span class="chip">低功率消息</span>
+                <span class="chip">一键断连</span>
+              </div>
+            </article>
+            <div class="device-visual" aria-hidden="true"><div class="device-lines"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="start">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>开机前，先把授权讲清楚。</h2>
+          <p class="lead">门店不会要求完整身体履历。普通购买只需要基础身份与年龄凭证；学生、医疗、职业和未成年人功能会单独列出授权窗口。</p>
+        </div>
+        <div class="steps">
+          <article class="step reveal">
+            <span class="num">01</span>
+            <h3>选择设备</h3>
+            <p class="muted">按家庭、学习、通勤或轻办公场景选型，不把职业能力包装成普通商品。</p>
+          </article>
+          <article class="step reveal">
+            <span class="num">02</span>
+            <h3>确认凭证</h3>
+            <p class="muted">系统只显示本次事务需要的凭证，不要求暴露完整灵核参数。</p>
+          </article>
+          <article class="step reveal">
+            <span class="num">03</span>
+            <h3>本地开机</h3>
+            <p class="muted">设置本地名称、保存位置、紧急停用方式和公共网络接入范围。</p>
+          </article>
+          <article class="step reveal">
+            <span class="num">04</span>
+            <h3>断连测试</h3>
+            <p class="muted">交付前完成低功率运行、凭证槽、家庭覆盖或通勤端断连测试。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section service-band reveal" id="service">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>维护记录属于你。</h2>
+          <p class="lead">复检记录默认保存在本地。转交学校、雇主、医疗端口或公共服务窗口时，每次都需要再次确认。</p>
+        </div>
+        <div class="service-grid">
+          <article class="service">
+            <h3>设备复检</h3>
+            <p>电池、低功率回路、散热、家庭路由覆盖和学习终端沙箱校验。</p>
+          </article>
+          <article class="service">
+            <h3>凭证槽清洁</h3>
+            <p>清理读写接点、核对用途凭证、移除过期授权并生成本地记录。</p>
+          </article>
+          <article class="service">
+            <h3>争议入口</h3>
+            <p>如果预测提醒影响通勤、课程或保险流程，可导出争议标注申请包。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="limits">
+      <div class="wrap limits">
+        <div>
+          <h2>我们不做的事</h2>
+          <p class="lead">民用灵算设备必须有清楚的边界。需要高危训练、职业许可或军用审计的能力，不应该被装进普通家庭商品里。</p>
+        </div>
+        <div class="limit-list">
+          <div class="limit-item"><span>×</span><div>不出售军用推演模块、灵核伪装附件或非法凭证刻录器。</div></div>
+          <div class="limit-item"><span>×</span><div>不提供绕过星港安检、学校监管或医疗端口授权的设备改装。</div></div>
+          <div class="limit-item"><span>×</span><div>不把预测算法做成无人裁判，也不替机构直接处罚用户。</div></div>
+          <div class="limit-item"><span>×</span><div>不向未成年人开放商业沉浸体验流或高功率职业套件解锁。</div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>
+        <strong>灵枢日用灵算</strong><br>
+        让日常设备懂得何时工作，也懂得何时停下。
+      </div>
+      <div>主视觉：二次元风格本地生成产品资产</div>
+    </div>
+  </footer>
+
+  <script>
+    const products = {
+      core: {
+        title: "栖核个人灵算核心",
+        text: "掌心大小的低功率随身算力。适合日程整理、学习笔记、本地凭证夹、普通共鸣消息和家庭设备联动。",
+        chips: ["本地凭证夹", "低功率消息", "一键断连"]
+      },
+      home: {
+        title: "环路家庭共鸣路由",
+        text: "把家庭设备、基础教育终端、医疗预约入口和公共服务提醒放在一个可查看的本地面板里。儿童模式默认关闭商业体验流。",
+        chips: ["家庭设备联动", "儿童模式", "公共服务提醒"]
+      },
+      study: {
+        title: "折页学习终端",
+        text: "支持低功率预演、课程沙箱和教师授权包。它不会提供教育灌注，也不会把职业能力伪装成一次性下载。",
+        chips: ["课程沙箱", "教师授权包", "无教育灌注"]
+      },
+      commute: {
+        title: "随行通勤辅助端",
+        text: "挂在包带或衣物接口区的小型终端。处理路线提醒、星港排队、检疫凭证提示和设备断连提醒。",
+        chips: ["星港排队", "检疫凭证提示", "断连提醒"]
+      },
+      service: {
+        title: "维护与授权凭证槽",
+        text: "用于门店开机、家庭路由复检、学生模式授权和过期凭证移除。每次转交记录都需要重新确认。",
+        chips: ["用途凭证", "本地记录", "过期移除"]
+      }
+    };
+
+    const tabs = document.querySelectorAll(".tabs button");
+    const productCopy = document.querySelector("#productCopy");
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        tabs.forEach((item) => item.setAttribute("aria-selected", "false"));
+        tab.setAttribute("aria-selected", "true");
+        const next = products[tab.dataset.product];
+        productCopy.innerHTML = `
+          <h3>${next.title}</h3>
+          <p class="muted">${next.text}</p>
+          <div class="chips">${next.chips.map((chip) => `<span class="chip">${chip}</span>`).join("")}</div>
+        `;
+      });
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .16 });
+    document.querySelectorAll(".reveal").forEach((item) => revealObserver.observe(item));
+
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const target = Number(entry.target.dataset.count || 0);
+        let current = 0;
+        const step = Math.max(1, Math.ceil(target / 24));
+        const timer = setInterval(() => {
+          current = Math.min(target, current + step);
+          entry.target.textContent = String(current).padStart(2, "0");
+          if (current >= target) clearInterval(timer);
+        }, 42);
+        countObserver.unobserve(entry.target);
+      });
+    }, { threshold: .9 });
+    document.querySelectorAll("[data-count]").forEach((item) => countObserver.observe(item));
+  </script>
+</body>
+</html>
